@@ -1,6 +1,7 @@
 package com.jfinal.ext.plugin.slxlme;
 
 import java.io.File;
+import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -83,9 +84,19 @@ public class SqlKit {
      * @return
      */
     public static String getSql(String key) {
-        return sqlMap.get(key);
+        return getSql(key, "");
     }
 
+    /**
+     * 获取 sql 格式化sql中预定义字符以 {0} {1} {2} 格式
+     * @param key sql 容器节点name . sql节点id
+     * @param arguments 格式化字符
+     * @return
+     */
+    public static String getSql(String key, Object ... arguments) {
+        return MessageFormat.format(sqlMap.get(key), arguments);
+    }
+    
 
     /**
      * 
