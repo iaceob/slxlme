@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<slxlme>
+    <container name="Tpl">
+        <sql id="testSql1">
+            select * from table2;
+        </sql>
+        <sql id="testSql3">
+            select * from table;
+        </sql>
+    </container>
+</slxlme>

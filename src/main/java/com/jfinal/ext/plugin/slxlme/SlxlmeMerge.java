@@ -27,7 +27,7 @@ import org.w3c.dom.Node;
  * @author iaceob (iaceob@gmail.com)
  *
  */
-public class SqlXmlMerge {
+public class SlxlmeMerge {
 
     private static Logger log = Logger.getLogger("xmlmerge");
     
@@ -136,7 +136,7 @@ public class SqlXmlMerge {
     
     public static void main(String[] args) throws Exception {
         // proper error/exception handling omitted for brevity
-        File[] files = getFileList(SqlXmlMerge.class.getClassLoader().getResource("").getFile(), ".xml");
+        File[] files = getFileList(SlxlmeMerge.class.getClassLoader().getResource("").getFile(), ".xml");
         // Document doc = merge("/sqlManage", files);
         Document doc = merge("/sqlManage", files);
         printXml(doc);
