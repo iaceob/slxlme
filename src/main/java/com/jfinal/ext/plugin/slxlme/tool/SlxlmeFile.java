@@ -1,4 +1,4 @@
-package com.jfinal.ext.plugin.slxlme;
+package com.jfinal.ext.plugin.slxlme.tool;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

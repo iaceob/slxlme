@@ -1,8 +1,7 @@
 package com.jfinal.ext.plugin.slxlme;
 
+import com.jfinal.ext.plugin.slxlme.function.IncludeFunction;
 import org.junit.Test;
-
-import java.util.Map;
 
 /**
  * Created by cox on 2016/1/5.
@@ -14,10 +13,12 @@ public class SlxlmePluginTest {
     public void testPlugin() {
         String suffix = ".sql.xml",
                 tagContainer = "container",
+                tagSql = "sql",
                 markContainer = "name",
                 markSql = "id";
-        Map<String, String> sqlVar = null;
-        SlxlmePlugin sp = new SlxlmePlugin(suffix, tagContainer, markContainer, markSql, sqlVar);
+        SlxlmePlugin sp = new SlxlmePlugin(null, suffix, tagContainer, tagSql, markContainer, markSql);
+        sp.regVar("tb_prefix", "tb_");
+        sp.regFun("include", new IncludeFunction());
         sp.start();
     }
 
