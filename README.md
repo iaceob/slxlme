@@ -27,10 +27,6 @@ new SlxlmePlugin().start();
 |markContainer|容器标识, 此标识作为取 sql 的命名空间      | name|
 |markSql      |容器中每个 sql 的节点, 作为每个 sql 的名称 | id|
 
-| Name | Description          |
-| ------------- | ----------- |
-| Help      | Display the help window.|
-| Close     | Closes a window     |
 
 ### 格式
 如下是默认示例:
