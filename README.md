@@ -105,10 +105,11 @@ SqlKit.formatSqls
 SqlKit.formatSqlIn
 SqlKit.formatSqlsIn
 ```
-**`SqlKit.getSql` **
+
+**`SqlKit.getSql`**
 >直接获取某个 key 的 sql
 
-**`SqlKit.getSqls` **
+**`SqlKit.getSqls`**
 >这个方法, 目前在 Jfinal 中用于分页, 因为 Jfinal 的分页查询 `select` 和 `from` 为分开的两条语句, 使用 `getSqls` 返回的是 `String[]` 0 是 `select` 1 是 `from`
 >其原理是使用 # 对 sql 字符串分割, 因此, xml 中的 sql 需要有 # , 如:
 >```sql
