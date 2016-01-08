@@ -17,14 +17,14 @@ new SlxlmePlugin().start();
 ### 配置说明
 这些配置均在实例化 Slxlme 插件时的构造函数中设置.
 所有参数均有默认值, 因此运行可以不做任何配置, 一下是默认配置
-var          |comment                              | default
----          |---                                  | ---
-path         |xml 文件位置                          | classpath
-suffix       |存放 sql 的 xml 文件后缀名              | .sql.xml
-tagContainer |sql 容器标签                          | container
-tagSql       |存储 sql 语句标签                      | sql
-markContainer|容器标识, 此标识作为取 sql 的命名空间      | name
-markSql      |容器中每个 sql 的节点, 作为每个 sql 的名称 | id
+|var          |comment                              | default|
+|---          |---                                  | ---|
+|path         |xml 文件位置                          | classpath|
+|suffix       |存放 sql 的 xml 文件后缀名              | .sql.xml|
+|tagContainer |sql 容器标签                          | container|
+|tagSql       |存储 sql 语句标签                      | sql|
+|markContainer|容器标识, 此标识作为取 sql 的命名空间      | name|
+|markSql      |容器中每个 sql 的节点, 作为每个 sql 的名称 | id|
 
 ### 格式
 如下是默认示例:
