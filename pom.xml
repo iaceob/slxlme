@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jfinal.ext.plugin</groupId>
     <artifactId>slxlme</artifactId>
-    <version>1.2.beta</version>
+    <version>2.0</version>
     <name>slxlme</name>
-    <description>sql xml</description>
+    <description>sql in xml</description>
     <packaging>jar</packaging>
 
 
@@ -95,6 +95,13 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.3</version>
+                <configuration>
+                    <includes>
+                        <!-- 打jar包时，只打包class文件 -->
+                        <include>**/*.class</include>
+                    </includes>
+                    <finalName>${project.name}-${project.version}</finalName>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -104,6 +111,15 @@
                     <source>${version-java}</source>
                     <target>${version-java}</target>
                     <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18</version>
+                <configuration>
+                    <skip>true</skip>
+                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
         </plugins>

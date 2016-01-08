@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<slxlme>
+<anything>
     <container name="Tpl">
         <sql id="testSql1">
             select * from table2;
@@ -8,7 +8,7 @@
             select * from table;
         </sql>
         <sql id="tableFields">
-            id, year, num, ctime
+            ${table.id}, year, num, ctime
         </sql>
     </container>
-</slxlme>
+</anything>

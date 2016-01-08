@@ -28,6 +28,7 @@ public class SlxlmeReplace {
             while (m.find()) {
                 String sv = m.group("var");
                 if (!sv.equals(var)) continue;
+                // var = var.replaceAll("\\.", ".");
                 sql = sql.replaceAll("\\$\\{" + var + "}", val);
             }
             return sql;
@@ -37,8 +38,11 @@ public class SlxlmeReplace {
         }
     }
 
-
-
+    /**
+     * 获取 sql 中所有的函数列表
+     * @param sql sql
+     * @return List
+     */
     public static List<Map<String, String>> getReplaceFun(String sql) {
         List<Map<String, String>> keys = new ArrayList<Map<String, String>>();
         Pattern p = Pattern.compile(REGEX_FUN_KEY_VAL);
@@ -49,6 +53,18 @@ public class SlxlmeReplace {
             keys.add(kv);
         }
         return keys;
+    }
+
+    /**
+     * 根据数量生成 in 的占位符数量
+     * @param number 数量
+     * @return String
+     */
+    public static String genPlaceholder(Integer number) {
+        StringBuilder sb = new StringBuilder();
+        for (;(number--)>0;)
+            sb.append("?").append((number>0 ? "," : ""));
+        return sb.toString();
     }
 
 }

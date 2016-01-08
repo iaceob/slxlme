@@ -1,8 +1,5 @@
 package com.jfinal.ext.plugin.slxlme.tool;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.FileFilter;
 import java.net.URL;
@@ -12,11 +9,10 @@ import java.util.Enumeration;
 import java.util.List;
 
 /**
- * Created by cox on 2016/1/5.
+ * Slxlme 文件操作, 读取存储 sql 的配置文件
  */
 public class SlxlmeFile {
 
-    private static final Logger log = LoggerFactory.getLogger(SlxlmeFile.class);
 
     public static File[] getSqlXmlFileList(String endsWith) {
         try {

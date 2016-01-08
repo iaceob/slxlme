@@ -65,6 +65,22 @@ public class SlxlmePlugin implements IPlugin {
         this.funs = new HashMap<String, SlxlmeFunction>();
     }
 
+    public SlxlmePlugin(String path, String suffix, String tagContainer, String tagSql) {
+        this(path, suffix, tagContainer, tagSql, "name", "id");
+    }
+
+    public SlxlmePlugin(String path, String suffix) {
+        this(path, suffix, "container", "sql");
+    }
+
+    public SlxlmePlugin(String suffix) {
+        this(null, suffix);
+    }
+
+    public SlxlmePlugin() {
+        this(".sql.xml");
+    }
+
     /**
      * 注册变量
      * @param key 变量名
@@ -142,9 +158,9 @@ public class SlxlmePlugin implements IPlugin {
             for (String sqlMapKey : sqlMap.keySet()) {
                 String sql = sqlMap.get(sqlMapKey);
                 if (sql == null || "".equals(sql)) continue;
-                for (String sqlVarKey : this.sqlVar.keySet()) {
-                    sqlMap.put(sqlMapKey, SlxlmeReplace.replaceVar(sql, sqlVarKey, this.sqlVar.get(sqlVarKey)));
-                }
+                for (String sqlVarKey : this.sqlVar.keySet())
+                    sql = SlxlmeReplace.replaceVar(sql, sqlVarKey, this.sqlVar.get(sqlVarKey));
+                sqlMap.put(sqlMapKey, sql);
             }
 
             // 调用函数解析

@@ -86,8 +86,7 @@
         </rollingPolicy>
     </appender>
 
-    <logger name="name.iaceob.kit" level="DEBUG"/>
-    <logger name="com.zxsoft.crawler" level="DEBUG"/>
+    <logger name="com.jfinal.ext.plugin.slxlme" level="INFO"/>
 
     <root level="debug">
         <appender-ref ref="STDOUT"/>

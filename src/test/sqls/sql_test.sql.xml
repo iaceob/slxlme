@@ -2,41 +2,39 @@
 <slxlme>
     <container name="Test1">
         <sql id="getTable1">
-            select
-            *
-            from ${tb_prefix}table where id isnull(num, 0)>5;
+            select * from ${tb_prefix}table where ${table.id} isnull(num, 0)>5;
         </sql>
         <!-- 查询的字段信息 -->
         <sql id="tableFields">
-            -- id 主键
+            -- ${table.id} 主键
             -- year 年分
             -- ${tb_prefix}num 数量
-            id, year, ${tb_prefix}num
+            ${table.id}, year, ${tb_prefix}num
         </sql>
         <sql id="getTable4">
             select
-            t1.id, t2.year, t2.${tb_prefix}num
+            t1.${table.id}, t2.year, t2.${tb_prefix}num
             from (
                 select #{include('Test1.tableFields')} from ${tb_prefix}table
             ) as t1
             right join (
                 #{include('Test1.getTable2')}
-            ) as t2 on t1.id=t2.id
+            ) as t2 on t1.${table.id}=t2.${table.id}
             right join (
                 #{include('Test1.getTable3')}
-            ) as t3 on t1.id=t3.id
-            where t1.id isnull(num, 0)&lt;5;
+            ) as t3 on t1.${table.id}=t3.${table.id}
+            where t1.${table.id} isnull(num, 0)&lt;5;
         </sql>
         <sql id="getTable2">
             select
             #{include('Test1.tableFields')}
-            from ${tb_prefix}table where id isnull(num, 0)>5
+            from ${tb_prefix}table where ${table.id} isnull(num, 0)>5
         </sql>
         <sql id="getTable3">
             <![CDATA[
             select
             #{include('Tpl.tableFields')}
-            from ${tb_prefix}table where id isnull(num, 0)>5
+            from ${tb_prefix}table where ${table.id} isnull(num, 0)>5
             ]]>
         </sql>
     </container>
@@ -45,7 +43,7 @@
         <sql id="getTable1">
             select
             #{include('Test1.tableFields')}
-            from ${tb_prefix}table where id isnull(num, 0)>5;
+            from ${tb_prefix}table where ${table.id} isnull(num, 0)>5;
         </sql>
     </container>
 </slxlme>

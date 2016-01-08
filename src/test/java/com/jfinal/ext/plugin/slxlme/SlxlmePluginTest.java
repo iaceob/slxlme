@@ -11,15 +11,13 @@ public class SlxlmePluginTest {
 
     @Test
     public void testPlugin() {
-        String suffix = ".sql.xml",
-                tagContainer = "container",
-                tagSql = "sql",
-                markContainer = "name",
-                markSql = "id";
-        SlxlmePlugin sp = new SlxlmePlugin(null, suffix, tagContainer, tagSql, markContainer, markSql);
+        SlxlmePlugin sp = new SlxlmePlugin();
         sp.regVar("tb_prefix", "tb_");
+        sp.regVar("table.id", "id");
         sp.regFun("include", new IncludeFunction());
         sp.start();
+
+        System.out.println(SqlKit.getSql("Test1.getTable4"));
     }
 
 }
