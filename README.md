@@ -86,28 +86,7 @@ select id, name, num from table1;
 自定义函数, 实现 `com.jfinal.ext.plugin.slxlme.function.api.SlxlmeFunction` 接口, 如自带的 `IncludeFunction`
 接口信息如下:
 ```java
-package com.jfinal.ext.plugin.slxlme.function.api;
-
-import java.util.Map;
-
-/**
- * Slxlme 函数接口, 自定义的函数通过此接口实现
- */
-public interface SlxlmeFunction {
-
-    /**
-     * 执行函数
-     * @param funKey 当前函数注册的 key 名称
-     * @param funVal 当前函数的参数值
-     * @param sqlName 当前 sql 的名称
-     * @param sql 当前 sql 内容
-     * @param sqlMap 所有 sql
-     * @return String
-     */
     String run(String funKey, String funVal, String sqlName, String sql, Map<String, String> sqlMap);
-
-}
-
 ```
 自定义函数只需在 plugin 中注册即可.
 >注意: include 随为自带函数, 不过并不是默认加载, 如需使用, 仍须先注册
