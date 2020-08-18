@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jfinal.ext.plugin</groupId>
     <artifactId>slxlme</artifactId>
-    <version>2.0</version>
+    <version>3.0</version>
     <name>slxlme</name>
     <description>sql in xml</description>
     <packaging>jar</packaging>

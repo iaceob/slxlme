@@ -99,4 +99,8 @@ public class SqlKit {
         SqlKit.sqlMap.clear();
         return true;
     }
+
+    public static Map<String, String> sqlMap() {
+        return sqlMap;
+    }
 }
