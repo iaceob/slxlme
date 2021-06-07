@@ -14,7 +14,7 @@
         <main.basedir>${project.basedir}</main.basedir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version-java>1.7</version-java>
-        <version-logback>1.1.2</version-logback>
+        <version-logback>1.2.0</version-logback>
         <version-slf4j>1.7.12</version-slf4j>
         <version-junit>4.12</version-junit>
         <version-jfinal>2.0</version-jfinal>
